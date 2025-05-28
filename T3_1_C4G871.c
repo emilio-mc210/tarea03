@@ -2,6 +2,16 @@
 #include<string.h>
 #define MAX 100
 
+/*
+* Funcion para revisar un string caracter por caracter.
+*
+* Params:
+* - int *string: Cadena de texto ingresada por el usuario.
+* - int letra: Caracter a revisar en la cadena.
+*
+* Retorno:
+* - La cantidad de veces que se repite letra en string.
+*/
 int revisar_string(char *string, char letra){
     int repeticion = 0;
 
@@ -18,9 +28,11 @@ int main(){
     char texto[MAX];
     char letra;
 
+    //Obtener cadena de texto
     printf("Ingrese un string: ");
     fgets(texto, MAX, stdin);
 
+    //Obtener caracter
     printf("Ingrese un caracter para revisar: ");
     scanf(" %c", &letra);
 
