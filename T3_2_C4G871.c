@@ -3,7 +3,16 @@
 #include<ctype.h>
 #define MAX 100
 
-//* ./programa < arhcivoin > output 2> error
+/*
+* Funcion para revisar una cadena de caracteres.
+*
+* Params:
+* - int *linea: Linea de texto del archivo a revisar (si solo tiene un numero es valida, sino es invalida).
+*
+* Retorno:
+* - 0 si la linea no es valida.
+* - 1 si la linea solo contiene un numero.
+*/
 int revisar_numero(char *linea){
     int i=0;
 
@@ -16,6 +25,7 @@ int revisar_numero(char *linea){
 
     //Verificar el resto de la linea
     for(;linea[i] != '\0' && linea[i] != '\n';i++){
+        //Revisa si no es un digito de 0-9
         if(!isdigit(linea[i])){
             return 0;
         }
@@ -27,6 +37,8 @@ int revisar_numero(char *linea){
 
 int main(){
     char linea[MAX];
+
+    //Revisa que haya una linea valida
     while(fgets(linea, MAX, stdin) != NULL){
         if(revisar_numero(linea)){
             printf("Numero: %s", linea);
