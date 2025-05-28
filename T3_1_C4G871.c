@@ -19,7 +19,7 @@ int main(){
     char letra;
 
     printf("Ingrese un string: ");
-    scanf(" %s", texto);
+    fgets(texto, MAX, stdin);
 
     printf("Ingrese un caracter para revisar: ");
     scanf(" %c", &letra);
@@ -29,7 +29,7 @@ int main(){
     printf("El caracter %c se repite %i veces.\n",letra,repeticion);
 
     //Imprimir el string al reves
-    printf("El string %s al reves es: ", texto);
+    printf("El string al reves es: ");
     for(int i = strlen(texto)-1; i>=0; i--){
         printf("%c",texto[i]);
     }
